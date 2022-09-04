@@ -1,1 +1,1 @@
-# golan-study
+# golang-study
