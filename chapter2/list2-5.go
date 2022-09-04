@@ -9,13 +9,15 @@ import (
 
 func main() {
 	x := input("type a price")
-	n, err := strconv.Atoi(x)
-	if err != nil {
+	if n, err := strconv.Atoi(x); err == nil {
+		if n%2 == 0 {
+			fmt.Println("偶数です。")
+		} else {
+			fmt.Println("奇数です。")
+		}
+	} else {
 		fmt.Println(err)
-		return
 	}
-	p := float64(n)
-	fmt.Println(int(p * 1.1))
 }
 
 func input(msg string) string {

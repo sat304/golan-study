@@ -8,14 +8,27 @@ import (
 )
 
 func main() {
-	x := input("type a price")
+	x := input("type a number")
 	n, err := strconv.Atoi(x)
-	if err != nil {
-		fmt.Println(err)
+	if err == nil {
+		fmt.Println("1から", n, "の偶数の合計は")
+	} else {
 		return
 	}
-	p := float64(n)
-	fmt.Println(int(p * 1.1))
+	t := 0
+	c := 0
+	for {
+		c++
+		if c%2 == 1 {
+			continue
+		}
+		if c > n {
+			break
+		}
+		t += c
+
+	}
+	fmt.Println(t, "です。")
 }
 
 func input(msg string) string {

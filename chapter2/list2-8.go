@@ -8,16 +8,20 @@ import (
 )
 
 func main() {
-	x := input("type a price")
+	x := input("type a number")
 	n, err := strconv.Atoi(x)
-	if err != nil {
-		fmt.Println(err)
+	if err == nil {
+		fmt.Println(n)
+	} else {
 		return
 	}
-	p := float64(n)
-	fmt.Println(int(p * 1.1))
+	switch {
+	case n%2 == 0:
+		fmt.Println("even")
+	case n%2 == 1:
+		fmt.Println("odd")
+	}
 }
-
 func input(msg string) string {
 	scanner := bufio.NewScanner(os.Stdin)
 	fmt.Print(msg + ": ")

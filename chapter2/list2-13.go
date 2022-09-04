@@ -8,14 +8,19 @@ import (
 )
 
 func main() {
-	x := input("type a price")
+	t := 0
+	x := input("type a number")
 	n, err := strconv.Atoi(x)
 	if err != nil {
-		fmt.Println(err)
-		return
+		goto err
 	}
-	p := float64(n)
-	fmt.Println(int(p * 1.1))
+	for i := 1; i <= n; i++ {
+		t += i
+	}
+	fmt.Println(t, "です。")
+	return
+err:
+	fmt.Println("error!")
 }
 
 func input(msg string) string {
